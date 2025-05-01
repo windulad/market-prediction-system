@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import './App.css';
-import Index from './components/index';
+import Home from './components/home';
 import LogIn from './components/login';
 import SignUp from './components/signup';
 import Foods from './components/foods';
@@ -11,7 +11,7 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Routes>
-        <Route path="/" element={<Index/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<LogIn/>}/>
         <Route path="/signup" element={<SignUp/>}/>
         <Route path="/foods" element={<Foods/>}/>
