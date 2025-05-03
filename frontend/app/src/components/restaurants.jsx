@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import FilterSideBarRestaurants from "../assets/react_components/filtersidebar_restaurants";
-import RestaurantCards from "../assets/react_components/restaurant_cards"
+import RestaurantCards from "../assets/react_components/cards_restaurant"
 
 function Restaurants(){
     const country = [
@@ -87,18 +87,19 @@ function Restaurants(){
             </div>
 
             {/* Filters */}
-            <div className="flex h-screen pt-52">
-                <aside className="w-90 pt-2 pl-6 pr-4 -mt-4 z-30 overflow-hidden border-l border-gray-200 shadow-[4px_0_10px_-2px_rgba(0,0,0,0.1)]">
+            <div className="flex pt-52 z-30">
+                <aside className="w-90 pt-2 pl-6 pr-4 -mt-4 border-l border-gray-200 shadow-[4px_0_10px_-2px_rgba(0,0,0,0.1)]">
                     <FilterSideBarRestaurants />
                 </aside>
 
-                <div className="flex-1 ml-64 pl-20 mt-2 pr-6 py-2 pb-10 overflow-auto">
+                <div className="flex-1 mt-4 pl-14 pr-12 py-2 pb-10">
                     <RestaurantCards />
                 </div>
             </div>
 
+
             {/* Footer */}
-            <footer className="bg-gray-900 text-white pt-10 pb-5">
+            <footer className="bg-gray-900 text-white pt-10 pb-5 z-20">
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 space-x-8 gap-8">
                     <div>
                         <h3 className="text-2xl font-bold mb-2">Moodify</h3>
