@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import FilterSideBarRestaurants from "../assets/react_components/filtersidebar_restaurants";
+import RestaurantCards from "../assets/react_components/restaurant_cards"
 
 function Restaurants(){
     const country = [
@@ -85,71 +87,18 @@ function Restaurants(){
             </div>
 
             {/* Filters */}
-            <div className="flex">
-                <aside className="pt-56 w-96 px-14 py-8 border-r border-gray-200 bg-white">
-                    <h3 className="text-xl font-bold mb-4 text-gray-800">Ranking Filters</h3>
-                    {/* Cuisine Type */}
-                    <div className="mb-6">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Cuisine</label>
-                        <select className="w-full border rounded-md px-3 py-2 text-sm">
-                            <option value="">All</option>
-                            <option>Sri Lankan</option>
-                            <option>Chinese</option>
-                            <option>Italian</option>
-                            <option>Indian</option>
-                        </select>
-                    </div>
-                    {/* Rating */}
-                    <div className="mb-6">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Minimum Rating</label>
-                        <select className="w-full border rounded-md px-3 py-2 text-sm">
-                        <option value="">Any</option>
-                        <option>4.0+</option>
-                        <option>4.5+</option>
-                        <option>5.0</option>
-                        </select>
-                    </div>
-                    {/* Price Range */}
-                    <div className="mb-6">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Price</label>
-                        <div className="space-y-2">
-                        <label className="flex items-center space-x-2">
-                            <input type="radio" name="price" className="form-radio" />
-                            <span>$</span>
-                        </label>
-                        <label className="flex items-center space-x-2">
-                            <input type="radio" name="price" className="form-radio" />
-                            <span>$$</span>
-                        </label>
-                        <label className="flex items-center space-x-2">
-                            <input type="radio" name="price" className="form-radio" />
-                            <span>$$$</span>
-                        </label>
-                        </div>
-                    </div>
-                    {/* Toggles */}
-                    <div className="space-y-4">
-                        <label className="flex items-center space-x-2">
-                        <input type="checkbox" className="form-checkbox" />
-                        <span className="text-sm text-gray-700">Open Now</span>
-                        </label>
-                        <label className="flex items-center space-x-2">
-                        <input type="checkbox" className="form-checkbox" />
-                        <span className="text-sm text-gray-700">Delivery Available</span>
-                        </label>
-                    </div>
+            <div className="flex h-screen pt-52">
+                <aside className="w-90 pt-2 pl-6 pr-4 -mt-4 z-30 overflow-hidden border-l border-gray-200 shadow-[4px_0_10px_-2px_rgba(0,0,0,0.1)]">
+                    <FilterSideBarRestaurants />
                 </aside>
 
-                <div className="flex-1 p-4">
-                    <p>card</p>
+                <div className="flex-1 ml-64 pl-20 mt-2 pr-6 py-2 pb-10 overflow-auto">
+                    <RestaurantCards />
                 </div>
             </div>
 
-
-
-
             {/* Footer */}
-            {/* <footer className="bg-gray-900 text-white pt-10 pb-5">
+            <footer className="bg-gray-900 text-white pt-10 pb-5">
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 space-x-8 gap-8">
                     <div>
                         <h3 className="text-2xl font-bold mb-2">Moodify</h3>
@@ -179,7 +128,7 @@ function Restaurants(){
                 <div className="mt-10 border-t border-gray-700 pt-4 text-center text-sm text-gray-500">
                     © 2025 Moodify. All rights reserved.
                 </div>
-            </footer> */}
+            </footer>
 
         </div>
     )
