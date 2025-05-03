@@ -159,7 +159,7 @@ function RestaurantCards() {
 								</span>
 							</div>
 							<div>
-								<button className="text-sm px-3 py-2 rounded-md text-white bg-indigo-600 font-medium hover:underline">
+								<button className="text-sm px-3 py-2 rounded-md text-white bg-indigo-500 font-medium hover:bg-indigo-600">
 									More details
 								</button>
 							</div>

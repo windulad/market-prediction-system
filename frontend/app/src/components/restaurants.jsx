@@ -71,9 +71,9 @@ function Restaurants(){
                             <a href="#" className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Wellness</a>
                             <a href="#" className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</a>
                         </div>
-                        <div className="flex space-x-8">
+                        <div className="flex space-x-8 items-center">
                             <a href="#" className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Log&nbsp;In</a>
-                            <a href="#" className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Sign&nbsp;Up</a>
+                            <a href="#" className="text-lg px-3 py-2 rounded-md text-white bg-indigo-500 hover:bg-indigo-600 font-semibold">Sign&nbsp;Up</a>
                         </div>
                     </div>
                 </div>
