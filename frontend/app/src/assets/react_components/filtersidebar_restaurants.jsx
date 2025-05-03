@@ -64,7 +64,7 @@ const FilterSideBarRestaurants = () => {
 			case 'occasions':
 				return (
 					<div className="space-y-2">
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.occasions.dateNight} 
 							onChange={(e) =>
@@ -73,7 +73,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Date Night</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.occasions.familyFriendly} 
 							onChange={(e) =>
@@ -82,7 +82,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Family Friendly</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.occasions.birthdayDinner} 
 							onChange={(e) =>
@@ -91,7 +91,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Birthday Dinner</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.occasions.soloDining} 
 							onChange={(e) =>
@@ -100,7 +100,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Solo Dining</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.occasions.groupHangout} 
 							onChange={(e) =>
@@ -115,7 +115,7 @@ const FilterSideBarRestaurants = () => {
 			case 'time_based':
 				return (
 					<div className="space-y-2">
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.time_based.quickLunch} 
 							onChange={(e) =>
@@ -124,7 +124,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Quick Lunch</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.time_based.lateNightEats} 
 							onChange={(e) =>
@@ -133,7 +133,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Late Night Eats</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.time_based.weekendBrunch} 
 							onChange={(e) =>
@@ -142,7 +142,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Weekend Brunch</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.time_based.OpenNow} 
 							onChange={(e) =>
@@ -157,7 +157,7 @@ const FilterSideBarRestaurants = () => {
 			case 'dietary_needs':
 				return (
 					<div className="space-y-2">
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.dietary_needs.veganOptions} 
 							onChange={(e) =>
@@ -166,7 +166,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Vegan Options</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.dietary_needs.halalFriendly} 
 							onChange={(e) =>
@@ -175,7 +175,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Halal-Friendly</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.dietary_needs.glutenFree} 
 							onChange={(e) =>
@@ -184,7 +184,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Gluten-Free</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.dietary_needs.lowCalorie} 
 							onChange={(e) =>
@@ -199,7 +199,7 @@ const FilterSideBarRestaurants = () => {
 			case 'budget':
 				return (
 					<div className="space-y-2">
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.budget.budgetFriendly} 
 							onChange={(e) =>
@@ -208,7 +208,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Budget Friendly</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.budget.midRange} 
 							onChange={(e) =>
@@ -217,7 +217,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Mid-Range</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.budget.highEndDining} 
 							onChange={(e) =>
@@ -232,7 +232,7 @@ const FilterSideBarRestaurants = () => {
 			case 'experience_type':
 				return (
 					<div className="space-y-2">
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.experience_type.romanticVibes} 
 							onChange={(e) =>
@@ -241,7 +241,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Romantic Vibes</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.experience_type.trendySpots} 
 							onChange={(e) =>
@@ -250,7 +250,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Trendy Spots</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.experience_type.quietAndCozy} 
 							onChange={(e) =>
@@ -259,7 +259,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Quiet & Cozy</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.experience_type.greatForPhotos} 
 							onChange={(e) =>
@@ -268,7 +268,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Great for Photos</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.experience_type.liveMusic} 
 							onChange={(e) =>
@@ -283,7 +283,7 @@ const FilterSideBarRestaurants = () => {
 			case 'cleanliness_focused':
 				return (
 					<div className="space-y-2">
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.cleanliness_focused.spotlessDining} 
 							onChange={(e) =>
@@ -292,7 +292,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Spotless Dining</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.cleanliness_focused.cleanBathrooms} 
 							onChange={(e) =>
@@ -301,7 +301,7 @@ const FilterSideBarRestaurants = () => {
 							/>
 							<span className="ml-2">Clean Bathrooms</span>
 						</label>
-						<label className="flex items-center py-2">
+						<label className="flex items-center py-1">
 							<input type="checkbox" className="form-checkbox" 
 							checked={formData.cleanliness_focused.highHygieneStandards} 
 							onChange={(e) =>
@@ -322,13 +322,13 @@ const FilterSideBarRestaurants = () => {
 	return (
 		<div className="flex">
 			{/* Sidebar */}
-			<aside className="fixed top-48 left-6 w-80 bg-white p-4 px-6 z-50 h-full shadow-[4px_0_10px_-2px_rgba(0,0,0,0.1)] ">
+			<aside className="flex top-48 left-6 w-80 h-screen bg-white p-4 px-6">
 				<ul className="space-y-2">
 					{filterCategories.map((cat) => (
 						<li key={cat.id}>
 							<button
 								onClick={() => toggleFilter(cat.id)}
-								className="w-full flex justify-between items-center text-left px-3 py-2 rounded hover:bg-gray-100"
+								className="w-64 flex justify-between items-center text-left pl-3 py-2 rounded hover:bg-gray-100"
 							>
 								<span className="font-medium">{cat.name}</span>
 								{isFilterOpen(cat.id) ? (
@@ -337,13 +337,16 @@ const FilterSideBarRestaurants = () => {
 									<ChevronRight className="h-4 w-4" />
 								)}
 							</button>
+							{openFilters === cat.id && (
+								<div className="text-sm font-semibold pl-3 pt-2">{renderFilterOptions(cat.id)}</div>
+							)}
 						</li>
 					))}
 				</ul>
 			</aside>
 
 			{/* Filter Options Panel */}
-			<div className={`fixed top-44 left-80 z-40 w-72 pl-8 py-4 h-full transform transition-transform duration-[800ms] text-white bg-indigo-500  shadow-[4px_0_10px_-2px_rgba(0,0,0,0.1)] 
+			{/* <div className={`flex top-44 left-80 z-40 w-72 pl-8 py-4 h-full transform transition-transform duration-[800ms] text-white bg-indigo-500  shadow-[4px_0_10px_-2px_rgba(0,0,0,0.1)] 
 				${openFilters ? 'translate-x-0' : '-translate-x-full'}`}
 			>
 				<div className="relative flex">
@@ -355,7 +358,7 @@ const FilterSideBarRestaurants = () => {
 					</div>
 				</form>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };
