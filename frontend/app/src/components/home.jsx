@@ -13,9 +13,32 @@ import GroomingTRS_2 from '../assets/top_rated/grooming_2.png'
 import RestaurantIcon from '../assets/categories/restaurant_icon.png'
 import FashionIcon from '../assets/categories/fashion_icon.png'
 import WellnessIcon from '../assets/categories/wellness_icon.png'
-import MoreIcon from '../assets/categories/more_icon.png'
 
 function Home(){
+    const country = [
+        { label: "Sri Lanka", value: "country1" }
+    ];
+
+    const city = [
+        { label: "Colombo", value: "city1" },
+        { label: "Kandy", value: "city2" },
+        { label: "Galle", value: "city3" }
+    ];
+
+    const [selectedCountry, setSelectedCountry] = useState("country1");
+
+    const getCountryLabel = (value) => {
+        const match = country.find((loc) => loc.value === value);
+        return match ? match.label : "";
+    };
+
+    const [selectedCity, setSelectedCity] = useState("city1");
+
+    const getCityLabel = (value) => {
+        const match = city.find((loc) => loc.value === value);
+        return match ? match.label : "";
+    };
+
     const settings = {
         dots: true,
         infinite: true,
@@ -138,25 +161,55 @@ function Home(){
         <div className="overflow-x-hidden">
             {/* Navigation */}
             <nav className="relative z-20">
-                <div className="max-w-7xl mx-auto px-4">
+                <div className="max-w-7xl mx-auto py-2">
                     <div className="flex justify-between bg-transparent h-16 items-center">
-                        <div className="flex space-x-12">
-                            <a href="#" className="text-xl text-indigo-500 font-bold">Moodify</a>
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-bold">Restaurants</a>
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-bold">Fashion</a>
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-bold">Wellness</a>
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-bold">Moodify&nbsp;for&nbsp;Buiness</a>
+                        <div className="flex space-x-8 items-center">
+                            <a href="#" className="text-2xl text-indigo-500 font-bold">Moodify</a>
+                            <div class="flex items-center w-full max-w-xl bg-white rounded-full shadow overflow-hidden">
+                                <select class="flex-grow w-32 px-4 py-2 text-md text-gray-700 placeholder-gray-500 focus:outline-none appearance-none bg-white"
+                                value={selectedCountry}
+                                onChange={(e) => setSelectedCountry(e.target.value)}>
+                                    {country.map((loc) => (
+                                        <option key={loc.value} value={loc.value}>
+                                            {loc.label}
+                                        </option>
+                                    ))}
+                                </select>
+                                <div class="h-6 w-px bg-gray-300 mx-2"></div>
+                                <select class="w-40 px-2 py-2 text-md text-gray-700 placeholder-gray-500 focus:outline-none appearance-none bg-white"
+                                value={selectedCity}
+                                onChange={(e) => setSelectedCity(e.target.value)}>
+                                    {city.map((loc) => (
+                                        <option key={loc.value} value={loc.value}>
+                                            {loc.label}
+                                        </option>
+                                    ))}
+                                </select>
+                                <button class="bg-indigo-500 hover:bg-indigo-700 p-3 flex items-center justify-center">
+                                    <svg class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.387a1 1 0 01-1.414 1.414l-4.387-4.387zM14 8a6 6 0 11-12 0 6 6 0 0112 0z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Restaurants</a>
+                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Fashion</a>
+                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Wellness</a>
+                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</a>
                         </div>
-                        <div className="flex space-x-12">
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-bold">Log&nbsp;In</a>
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-bold">Sign&nbsp;Up</a>
+                        <div className="flex space-x-8">
+                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Log&nbsp;In</a>
+                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Sign&nbsp;Up</a>
                         </div>
                     </div>
                 </div>
             </nav>
 
             {/* Carousel: Offers! */}
-            <div className="flex overflow-hidden pb-6 -mt-16">
+            <div className="flex overflow-hidden pb-6 -mt-20">
                 <div className="mx-auto w-screen h-screen">
                     <Slider {...settings}>
                         <div>
@@ -164,7 +217,7 @@ function Home(){
                             style={{ backgroundImage: `url(${RestaurantImg})` }}
                             >
                                 <div className="absolute inset-0 bg-black/10 z-0"></div>
-                                <div className="relative z-10 items-start justify-start mx-10 px-2 my-6 pt-11">
+                                <div className="relative z-10 items-start justify-start mx-10 px-6 my-6 pt-16">
                                     <h1 className="text-7xl font-bold text-white drop-shadow-lg">Limited Time Offer!</h1>
                                     <h3 className="text-3xl font-medium text-white drop-shadow-lg">Get 30% off on all dishes</h3>
                                     <p className="text-xl font-medium text-white drop-shadow-lg">Offer valid until this Sunday only</p>
@@ -180,7 +233,7 @@ function Home(){
                             style={{ backgroundImage: `url(${FashionImg})` }}
                             >
                                 <div className="absolute inset-0 bg-black/10 z-0"></div>
-                                <div className="relative z-10 items-start justify-start mx-10 px-2 my-6 pt-11">
+                                <div className="relative z-10 items-start justify-start mx-10 px-6 my-6 pt-16">
                                     <h1 className="text-7xl font-bold text-white drop-shadow-lg">Limited Time Offer!</h1>
                                     <h3 className="text-3xl font-medium text-white drop-shadow-lg">Get 30% off on all clothes</h3>
                                     <p className="text-xl font-medium text-white drop-shadow-lg">Offer valid until this Sunday only</p>
@@ -195,7 +248,7 @@ function Home(){
                             style={{ backgroundImage: `url(${WellnessImg})` }}
                             >
                                 <div className="absolute inset-0 bg-black/10 z-0"></div>
-                                <div className="relative z-10 items-start justify-start mx-10 px-2 my-6 pt-11">
+                                <div className="relative z-10 items-start justify-start mx-10 px-6 my-6 pt-16">
                                     <h1 className="text-7xl font-bold text-white drop-shadow-lg">Limited Time Offer!</h1>
                                     <h3 className="text-3xl font-medium text-white drop-shadow-lg">Get 30% off on all skin care products</h3>
                                     <p className="text-xl font-medium text-white drop-shadow-lg">Offer valid until this Sunday only</p>
@@ -211,7 +264,7 @@ function Home(){
 
             {/* Hero: Top Rated Shops This Week */}
             <section className="overflow-x-hidden pt-8 pb-8">
-                <h2 className="text-4xl font-bold text-center my-2 pt-4">Top Rated Shops This Week</h2>
+                <h2 className="text-4xl font-bold text-center my-2 pt-4"> This Week's Best in {getCityLabel(selectedCity)}, {getCountryLabel(selectedCountry)}</h2>
                 <p className="text-sm font-semibold text-center mb-6 pb-6">Shops everyone’s talking about – highest rated by real users this week!</p>
                 <div className="flex animate-scroll-x w-max space-x-14 overflow-x-hidden px-12 py-4 mb-8 justify-between">
                     {loopingShops.map((shop, idx) => (
@@ -245,19 +298,15 @@ function Home(){
                         <span className="text-base font-bold text-gray-700">Fashion</span>
                     </a>
                     <a href="/" className="flex flex-col items-center justify-center w-60 h-60 px-4 py-6 bg-white rounded-2xl shadow-md border hover:bg-gray-50 transition text-center">
-                        <img src={WellnessIcon} alt="Clothes" className="w-28 h-28 mx-auto mb-4" />
+                        <img src={WellnessIcon} alt="Clothes" className="w-28 h-28 mx-auto mb-6" />
                         <span className="text-base font-bold text-gray-700">Wellness</span>
-                    </a>
-                    <a href="/" className="flex flex-col items-center justify-center w-60 h-60 px-4 py-6 bg-white rounded-2xl shadow-md border hover:bg-gray-50 transition text-center">
-                        <img src={MoreIcon} alt="Clothes" className="w-28 h-28 mx-auto mb-4" />
-                        <span className="text-base font-bold text-gray-700">More</span>
                     </a>
                 </div>
             </section>
 
             {/* Reviews */}
             <section className="text-center pb-28">
-                <h2 className="text-4xl font-bold mb-2">Discover Honest Reviews</h2>
+                <h2 className="text-4xl font-bold mb-2">Discover Reviews</h2>
                 <p className="text-sm font-semibold mb-6 pb-12">Trusted feedback on foods, clothes, and grooming shops</p>
                 <div className="grid gap-6 grid-cols-3 flex-wrap justify-start px-28">
                     {reviews.map((review) => (
@@ -313,16 +362,14 @@ function Home(){
             </section>
 
             {/* Footer */}
-            <footer className="bg-gray-900 text-white py-10">
+            <footer className="bg-gray-900 text-white pt-10 pb-5">
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 space-x-8 gap-8">
-                    {/* Logo & Description */}
                     <div>
                         <h3 className="text-2xl font-bold mb-2">Moodify</h3>
                         <p className="text-sm text-gray-400">
                             Real reviews from real people. Discover the best in food, fashion, and grooming with confidence.
                         </p>
                     </div>
-                    {/* Navigation Links */}
                     <div>
                         <h4 className="text-md font-semibold mb-3">Quick Links</h4>
                         <ul className="space-y-2 text-sm text-gray-300">
@@ -333,7 +380,6 @@ function Home(){
                             <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
                         </ul>
                     </div>
-                    {/* Social Media */}
                     <div>
                         <h4 className="text-md font-semibold mb-3">Follow Us</h4>
                         <div className="flex space-x-4 text-gray-400">
