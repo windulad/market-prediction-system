@@ -298,7 +298,7 @@ function Home(){
                         <span className="text-base font-bold text-gray-700">Fashion</span>
                     </a>
                     <a href="/" className="flex flex-col items-center justify-center w-60 h-60 px-4 py-6 bg-white rounded-2xl shadow-md border hover:bg-gray-50 transition text-center">
-                        <img src={WellnessIcon} alt="Clothes" className="w-28 h-28 mx-auto mb-6" />
+                        <img src={WellnessIcon} alt="Clothes" className="w-32 h-32 mx-auto mb-2" />
                         <span className="text-base font-bold text-gray-700">Wellness</span>
                     </a>
                 </div>
