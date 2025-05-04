@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
-import RestaurantImg from '../assets/home_carousel/restaurants_banner.png'
-import FashionImg from '../assets/home_carousel/fashion_banner.png'
-import WellnessImg from '../assets/home_carousel/wellness_banner.png'
-import FoodTRS_1 from '../assets/top_rated/foods_1.png'
-import FoodTRS_2 from '../assets/top_rated/foods_2.png'
-import ClothesTRS_1 from '../assets/top_rated/clothes_1.png'
-import ClothesTRS_2 from '../assets/top_rated/clothes_2.png'
-import GroomingTRS_1 from '../assets/top_rated/grooming_1.png'
-import GroomingTRS_2 from '../assets/top_rated/grooming_2.png'
-import RestaurantIcon from '../assets/categories/restaurant_icon.png'
-import FashionIcon from '../assets/categories/fashion_icon.png'
-import WellnessIcon from '../assets/categories/wellness_icon.png'
+import RestaurantImg from '../assets/home_components/home_carousel/restaurants_banner.png'
+import FashionImg from '../assets/home_components/home_carousel/fashion_banner.png'
+import WellnessImg from '../assets/home_components/home_carousel/wellness_banner.png'
+import FoodTRS_1 from '../assets/home_components/top_rated/foods_1.png'
+import FoodTRS_2 from '../assets/home_components/top_rated/foods_2.png'
+import ClothesTRS_1 from '../assets/home_components/top_rated/clothes_1.png'
+import ClothesTRS_2 from '../assets/home_components/top_rated/clothes_2.png'
+import GroomingTRS_1 from '../assets/home_components/top_rated/grooming_1.png'
+import GroomingTRS_2 from '../assets/home_components/top_rated/grooming_2.png'
+import RestaurantIcon from '../assets/home_components/categories/restaurant_icon.png'
+import FashionIcon from '../assets/home_components/categories/fashion_icon.png'
+import WellnessIcon from '../assets/home_components/categories/wellness_icon.png'
 
 function Home(){
     const country = [
@@ -164,7 +164,7 @@ function Home(){
                 <div className="max-w-7xl mx-auto py-2">
                     <div className="flex justify-between bg-transparent h-16 items-center">
                         <div className="flex space-x-8 items-center">
-                            <a href="#" className="text-2xl text-indigo-500 font-bold">Moodify</a>
+                            <a href="#" className="text-3xl text-indigo-500 font-bold">Moodify</a>
                             <div class="flex items-center w-full max-w-xl bg-white rounded-full shadow overflow-hidden">
                                 <select class="flex-grow w-32 px-4 py-2 text-md text-gray-700 placeholder-gray-500 focus:outline-none appearance-none bg-white"
                                 value={selectedCountry}
