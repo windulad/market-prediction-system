@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import FilterSideBarRestaurants from "../assets/react_components/filtersidebar_restaurants";
-import RestaurantCards from "../assets/react_components/cards_restaurant"
+import TitleImg from "../assets/restaurants_components/titleimg.png"
+import FilterSideBarRestaurants from "../assets/restaurants_components/filtersidebar_restaurants";
+import RestaurantCards from "../assets/restaurants_components/cards_restaurant"
 
 function Restaurants(){
     const country = [
@@ -35,7 +36,7 @@ function Restaurants(){
                 <div className="max-w-screen-xl mx-auto py-2">
                     <div className="flex h-16 justify-between items-center">
                         <div className="flex space-x-8 items-center">
-                            <a href="#" className="text-2xl text-indigo-500 font-bold">Moodify</a>
+                            <a href="#" className="text-3xl text-indigo-500 font-bold">Moodify</a>
                             <div class="flex items-center w-full max-w-xl bg-white rounded-full shadow overflow-hidden">
                                 <select class="flex-grow w-32 px-4 py-2 text-md text-gray-700 placeholder-gray-500 focus:outline-none appearance-none bg-white"
                                 value={selectedCountry}
@@ -79,19 +80,27 @@ function Restaurants(){
                 </div>
             </nav>
 
-            <div className="fixed top-4 left-0 right-0 bg-white z-40 shadow-md px-4 pb-4">
-                <div className="text-left pt-20 pb-4 mx-10">
-                    <h2 className="text-4xl font-bold mb-2">Top Restaurants in {getCityLabel(selectedCity)}, {getCountryLabel(selectedCountry)}</h2>
-                    <p className="text-sm font-semibold">What’s Cooking in {getCityLabel(selectedCity)} – Top Picks Right Now</p>
+            {/* Title, Subtitle */}
+            <div className="fixed top-2 left-0 right-0 bg-white z-40 shadow-md px-4 pb-4">
+                <div className="flex items-center justify-between">
+                    <div className="text-left pt-20 pb-4 mx-10">
+                        <h2 className="text-4xl font-bold mb-2">Top Restaurants in {getCityLabel(selectedCity)}, {getCountryLabel(selectedCountry)}</h2>
+                        <p className="text-sm font-semibold">What’s Cooking in {getCityLabel(selectedCity)} – Top Picks Right Now</p>
+                    </div>
+                    <div className="ml-4 pt-20 pb-4 mx-10">
+                        <img src={TitleImg} className="w-20 h-20"/>
+                    </div>
                 </div>
             </div>
 
-            {/* Filters */}
+            
             <div className="flex pt-52 z-30">
-                <aside className="w-90 pt-2 pl-6 pr-4 -mt-4 border-l border-gray-200 shadow-[4px_0_10px_-2px_rgba(0,0,0,0.1)]">
+                {/* Filters */}
+                <aside className="w-90 pt-4 pl-6 pr-4 -mt-4 border-l border-gray-200 shadow-[4px_0_10px_-2px_rgba(0,0,0,0.1)]">
                     <FilterSideBarRestaurants />
                 </aside>
-
+                
+                {/* Cards */}
                 <div className="flex-1 mt-4 pl-14 pr-12 py-2 pb-10">
                     <RestaurantCards />
                 </div>
@@ -130,7 +139,6 @@ function Restaurants(){
                     © 2025 Moodify. All rights reserved.
                 </div>
             </footer>
-
         </div>
     )
 }
