@@ -15,6 +15,34 @@ import FashionIcon from '../assets/home_components/categories/fashion_icon.png'
 import WellnessIcon from '../assets/home_components/categories/wellness_icon.png'
 
 function Home(){
+    // Navigation
+    const navigate = useNavigate();
+
+    const handleclick0 = () => {
+        navigate('/');
+    }
+
+    const handleclick1 = () => {
+        navigate('/restaurants');
+    }
+
+    const handleclick2 = () => {
+        navigate('/fashion');
+    }
+
+    const handleclick3 = () => {
+        navigate('/wellness');
+    }
+
+    const handleclick4 = () => {
+        navigate('/login');
+    }
+
+    const handleclick5 = () => {
+        navigate('/signup');
+    }
+
+    // NavBar consts
     const country = [
         { label: "Sri Lanka", value: "country1" }
     ];
@@ -164,7 +192,7 @@ function Home(){
                 <div className="max-w-7xl mx-auto py-2">
                     <div className="flex justify-between bg-transparent h-16 items-center">
                         <div className="flex space-x-8 items-center">
-                            <a href="#" className="text-3xl text-indigo-500 font-bold">Moodify</a>
+                            <button onClick={handleclick0} className="text-3xl text-indigo-500 font-bold">Moodify</button>
                             <div class="flex items-center w-full max-w-xl bg-white rounded-full shadow overflow-hidden">
                                 <select class="flex-grow w-32 px-4 py-2 text-md text-gray-700 placeholder-gray-500 focus:outline-none appearance-none bg-white"
                                 value={selectedCountry}
@@ -195,14 +223,14 @@ function Home(){
                                     </svg>
                                 </button>
                             </div>
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Restaurants</a>
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Fashion</a>
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Wellness</a>
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</a>
+                            <button onClick={handleclick1} className="text-lg text-white hover:text-indigo-600 font-semibold">Restaurants</button>
+                            <button onClick={handleclick2} className="text-lg text-white hover:text-indigo-600 font-semibold">Fashion</button>
+                            <button onClick={handleclick3} className="text-lg text-white hover:text-indigo-600 font-semibold">Wellness</button>
+                            <button href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</button>
                         </div>
                         <div className="flex space-x-8 items-center">
-                            <a href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Log&nbsp;In</a>
-                            <a href="#" className="text-lg px-3 py-2 rounded-md text-white bg-indigo-500 hover:bg-indigo-600 font-semibold">Sign&nbsp;Up</a>
+                            <button onClick={handleclick4} className="text-lg text-white hover:text-indigo-600 font-semibold">Log&nbsp;In</button>
+                            <button onClick={handleclick5} className="text-lg px-3 py-2 rounded-md text-white bg-indigo-500 hover:bg-indigo-600 font-semibold">Sign&nbsp;Up</button>
                         </div>
                     </div>
                 </div>
