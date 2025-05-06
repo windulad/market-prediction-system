@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { SessionContext } from "../context/SessionContext";
 import Axios from 'axios';
 const SERVER_URL = 'http://127.0.0.1:5000';
 
 function SignUp(){
+    const [ responseData, setResponseData ] = useState(''); 
+
+    const { setSessionValue } = useContext(SessionContext);
+
     // Form Submission
-    const [responseData, setResponseData] = useState(null);
-
-    const [message, setMessage] = useState('');
-
     const navigate = useNavigate();
 
     const[name, setName] = useState('');
@@ -35,7 +37,6 @@ function SignUp(){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // var json_details = JSON.stringify(details);
         // POST email, password to 'SERVER_URL' using Axios
         try{
             Axios.post(SERVER_URL+'/signup', details, {
@@ -45,23 +46,24 @@ function SignUp(){
                 withCredentials: true
             })
             .then(response => {
-                // GET message from server
-                const message = response.data.message;
-                setMessage(message);
-                console.log(message)
+                setResponseData(response.data)
 
-                // GET session_value from server(user_id)
+                const code = response.data.code;
+                const message = response.data.message;
                 const session_value = response.data.session_value;
-                setResponseData(response.data);
+
+                console.log(code)
+                console.log(message)
                 console.log(session_value)
 
-                // POST session_value to 'home.jsx'
-                const data = { user_id: session_value };
+                // Save session_value to localStorage
+                localStorage.setItem('sessionToken', session_value);
+                setSessionValue(session_value); // ✅ this triggers a re-render immediately
 
-                if (message === 'signup_error'){
+                if (code === 'signup_error'){
                     navigate('/signup');
-                } else if(message === 'signup_success'){
-                    navigate('/home', {state: data});
+                } else if(code === 'signup_success'){
+                    navigate('/');
                 }
             })
         } catch(error){
@@ -147,9 +149,12 @@ function SignUp(){
                             Sign Up
                         </button>
                     </div>
-                    <div className="createacc_error">
-                        <p>{message}</p>
-                    </div>
+                    {/* Error handling */}
+                    { responseData.code === 'signup_error' && (
+                        <div className="signup_error bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4">
+                            <p className="font-medium">{responseData.message}</p>
+                        </div>
+                    )}
                 </form>
 
                 <p className="mt-5 text-center text-base text-gray-500">

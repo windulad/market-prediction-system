@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 // import './App.css';
 import Home from './components/home';
 import LogIn from './components/login';
@@ -6,7 +7,6 @@ import SignUp from './components/signup';
 import Restaurants from './components/restaurants';
 import Fashion from './components/fashion';
 import Wellness from './components/wellness';
-import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
