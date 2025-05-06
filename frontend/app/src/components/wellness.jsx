@@ -1,36 +1,52 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { SessionContext } from "../context/SessionContext";
 import TitleImg from "../assets/wellness_components/titleimg.png"
 import FilterSideBarWellness from "../assets/wellness_components/filtersidebar_wellness";
 import WellnessCards from "../assets/wellness_components/cards_wellness"
 
 function Wellness(){
+    // GET sessionValue
+    const { sessionValue, setSessionValue } = useContext(SessionContext);
+
+    console.log(sessionValue)
+
     // Navigation
     const navigate = useNavigate();
 
-    const handleclick0 = () => {
+    const handleclickHome = () => {
         navigate('/');
     }
 
-    const handleclick1 = () => {
+    const handleclickRestaurants = () => {
         navigate('/restaurants');
     }
 
-    const handleclick2 = () => {
+    const handleclickFashion = () => {
         navigate('/fashion');
     }
 
-    const handleclick3 = () => {
+    const handleclickWellness = () => {
         navigate('/wellness');
     }
 
-    const handleclick4 = () => {
+    const handleclickLogin = () => {
         navigate('/login');
     }
 
-    const handleclick5 = () => {
+    const handleclickSignup = () => {
         navigate('/signup');
     }
+
+    const handleclickProfile = () => {
+        navigate('/profile');
+    }
+
+    const handleclickLogout = () => {
+        setSessionValue(null); // update state
+        navigate('/');
+    };
 
     // NavBar consts
     const country = [
@@ -64,7 +80,7 @@ function Wellness(){
                 <div className="max-w-screen-xl mx-auto py-2">
                     <div className="flex h-16 justify-between items-center">
                         <div className="flex space-x-8 items-center">
-                            <button onClick={handleclick0} className="text-3xl text-indigo-500 font-bold">Moodify</button>
+                            <button onClick={handleclickHome} className="text-3xl text-indigo-500 font-bold">Moodify</button>
                             <div class="flex items-center w-full max-w-xl bg-white rounded-full shadow overflow-hidden">
                                 <select class="flex-grow w-32 px-4 py-2 text-md text-gray-700 placeholder-gray-500 focus:outline-none appearance-none bg-white"
                                 value={selectedCountry}
@@ -95,14 +111,23 @@ function Wellness(){
                                     </svg>
                                 </button>
                             </div>
-                            <button onClick={handleclick1} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Restaurants</button>
-                            <button onClick={handleclick2} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Fashion</button>
-                            <button onClick={handleclick3} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Wellness</button>
+                            <button onClick={handleclickRestaurants} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Restaurants</button>
+                            <button onClick={handleclickFashion} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Fashion</button>
+                            <button onClick={handleclickWellness} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Wellness</button>
                             <button href="#" className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</button>
                         </div>
                         <div className="flex space-x-8 items-center">
-                            <button onClick={handleclick4} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Log&nbsp;In</button>
-                            <button onClick={handleclick5} className="text-lg px-3 py-2 rounded-md text-white bg-indigo-500 hover:bg-indigo-600 font-semibold">Sign&nbsp;Up</button>
+                            {sessionValue ? (
+                                <>
+                                    <button onClick={handleclickProfile} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Profile</button>
+                                    <button onClick={handleclickLogout} className="text-lg px-3 py-2 rounded-md text-white bg-indigo-500 hover:bg-indigo-600 font-semibold">Log&nbsp;Out</button>
+                                </>
+                            ) : (
+                                <>
+                                    <button onClick={handleclickLogin} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Log&nbsp;In</button>
+                                    <button onClick={handleclickSignup} className="text-lg px-3 py-2 rounded-md text-white bg-indigo-500 hover:bg-indigo-600 font-semibold">Sign&nbsp;Up</button>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>

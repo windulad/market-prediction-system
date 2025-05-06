@@ -1,11 +1,8 @@
 # Views
-# --> API endpoints
-# --> Handles HTTP requests and responses
-# --> Routes & Controllers
-
+# API endpoints, Handles HTTP requests and responses, Routes & Controllers
 from flask import request
 from app import app
-from app.services import create_user_account
+from app import services
 
 @app.route("/")
 def home():
@@ -21,7 +18,17 @@ def signup():
 	email = json_data.get('email')
 	password = json_data.get('password')
 
-	print(name, email, password)
+	result = services.create_user_account(name, email, password)
+	return result
 
-	result = create_user_account(name, email, password)
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+	json_data = request.get_json()
+	if not json_data:
+		return {'message': 'Invalid or missing JSON data'}, 400
+
+	email = json_data.get('email')
+	password = json_data.get('password')
+
+	result = services.verify_user_credentials(email, password)
 	return result
