@@ -3,17 +3,19 @@ import { ChevronDown, ChevronRight } from 'lucide-react';
 import FilterImg1 from '../restaurants_components/filter_icons/occasions.png';
 import FilterImg2 from '../restaurants_components/filter_icons/time_based.png';
 import FilterImg3 from '../restaurants_components/filter_icons/dietary_needs.png';
-import FilterImg4 from '../restaurants_components/filter_icons/budget.png';
-import FilterImg5 from '../restaurants_components/filter_icons/experience_type.png';
-import FilterImg6 from '../restaurants_components/filter_icons/cleanliness_focused.png';
+import FilterImg4 from '../restaurants_components/filter_icons/drink_selection.png';
+import FilterImg5 from '../restaurants_components/filter_icons/budget.png';
+import FilterImg6 from '../restaurants_components/filter_icons/experience_type.png';
+import FilterImg7 from '../restaurants_components/filter_icons/cleanliness_focused.png';
 
 const filterCategories = [
 	{ id: 'occasions', name: 'Occasions', img: FilterImg1 },
 	{ id: 'time_based', name: 'Time-Based', img: FilterImg2 },
 	{ id: 'dietary_needs', name: 'Dietary Needs', img: FilterImg3 },
-	{ id: 'budget', name: 'Budget', img: FilterImg4 },
-	{ id: 'experience_type', name: 'Experience Type', img: FilterImg5 },
-	{ id: 'cleanliness_focused', name: 'Cleanliness Focused', img: FilterImg6 },
+	{ id: 'drink_selection', name: 'Drink Selection', img: FilterImg4 },
+	{ id: 'budget', name: 'Budget', img: FilterImg5 },
+	{ id: 'experience_type', name: 'Experience Type', img: FilterImg6 },
+	{ id: 'cleanliness_focused', name: 'Cleanliness Focused', img: FilterImg7 },
 ];
 
 const defaultFormData = {
@@ -35,6 +37,12 @@ const defaultFormData = {
 		halalFriendly: false,
 		glutenFree: false,
 		lowCalorie: false,
+	},
+	drink_selection: {
+		extensiveBarMenu: false,
+		craftCocktails: false,
+		nonAlcoholicVariety: false,
+		premiumBeverages: false,
 	},
 	budget: {
 		budgetFriendly: false,
@@ -96,6 +104,12 @@ const filterOptionsMap = {
 		glutenFree: 'Gluten-Free',
 		lowCalorie: 'Low-Calorie',
 	},
+	drink_selection: {
+		extensiveBarMenu: 'Extensive Bar Menu',
+		craftCocktails: 'Craft Cocktails	',
+		nonAlcoholicVariety: 'Non-Alcoholic Variety',
+		premiumBeverages: 'Premium Beverages',
+	},
 	budget: {
 		budgetFriendly: 'Budget Friendly',
 		midRange: 'Mid-Range',
@@ -120,6 +134,7 @@ const FilterSideBarRestaurants = () => {
 		occasions: false,
 		time_based: false,
 		dietary_needs: false,
+		drink_selection: false,
 		budget: false,
 		experience_type: false,
 		cleanliness_focused: false,
