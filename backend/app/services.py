@@ -82,3 +82,4 @@ def verify_user_credentials(email, input_password):
         }
     
     # return None  # Invalid credentials
+
