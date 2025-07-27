@@ -45,27 +45,13 @@ def insert_user(name, email, password):
     conn.close()
     return user_id
 
-# # Check a Password on Login
-# def get_user_by_password(password):
-#     conn = get_db_connection()
-#     cursor = conn.cursor(dictionary=True)
-#     cursor.execute("SELECT user_id FROM users WHERE email=%s", (email,))
-#     user_id = cursor.fetchone()
-#     conn.close()
-#     return user_id
-
-
-
-
-# # Retrieve user ID and set session
-# def get_user_id_by_credentials(email, password):
-#     # Step 1: 
-#     conn = get_db_connection()
-#     cursor = conn.cursor()
-#     cursor.execute("SELECT user_id FROM users WHERE email=%s AND password=%s",(email, password))
-#     data = cursor.fetchone()
-#     conn.close()
-#     return data[0] if data else None
-
-
+# Get data from restaurants table
+def retrieve_data_restaurants():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM restaurants;")
+    data = cursor.fetchall()
+    conn.commit()
+    conn.close()
+    return data
 

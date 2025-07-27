@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { SessionContext } from "../../context/SessionContext";
 import { ChevronDown, ChevronRight } from 'lucide-react';
+import Axios from 'axios';
 import FilterImg1 from '../restaurants_components/filter_icons/occasions.png';
 import FilterImg2 from '../restaurants_components/filter_icons/time_based.png';
 import FilterImg3 from '../restaurants_components/filter_icons/dietary_needs.png';
@@ -7,6 +11,7 @@ import FilterImg4 from '../restaurants_components/filter_icons/drink_selection.p
 import FilterImg5 from '../restaurants_components/filter_icons/budget.png';
 import FilterImg6 from '../restaurants_components/filter_icons/experience_type.png';
 import FilterImg7 from '../restaurants_components/filter_icons/cleanliness_focused.png';
+const SERVER_URL = 'http://127.0.0.1:5000';
 
 const filterCategories = [
 	{ id: 'occasions', name: 'Occasions', img: FilterImg1 },
@@ -130,6 +135,8 @@ const filterOptionsMap = {
 };
 
 const FilterSideBarRestaurants = () => {
+	const [ responseData, setResponseData ] = useState('');
+
 	const [openFilter, setOpenFilter] = useState({
 		occasions: false,
 		time_based: false,
@@ -140,8 +147,9 @@ const FilterSideBarRestaurants = () => {
 		cleanliness_focused: false,
 	});
 
-
 	const [formData, setFormData] = useState(defaultFormData);
+
+	// console.log(formData);
 
 	const toggleFilter = (id) => {
 		setOpenFilter((prev) => ({
@@ -160,45 +168,78 @@ const FilterSideBarRestaurants = () => {
 		}));
 	};
 
-  return (
-	<div className="flex">
-		<aside className="flex top-48 left-6 w-80 h-screen bg-white p-4 px-6">
-			<ul className="space-y-2">
-			{filterCategories.map((cat) => (
-				<li key={cat.id}>
-				<button
-					onClick={() => toggleFilter(cat.id)}
-					className="w-64 flex justify-between items-center text-left pl-3 py-2 rounded hover:bg-gray-100"
-				>
-					<div className="flex items-center gap-2">
-					<img src={cat.img} className="w-6 h-6" />
-					<span className="text-base font-medium text-gray-700 pl-2">{cat.name}</span>
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // POST email, password to 'SERVER_URL' using Axios
+        try{
+            Axios.post(SERVER_URL+'/restaurant', formData, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                withCredentials: true
+            })
+            .then(response => {
+				console.log('Filters sent successfully:', response.data);
+                setResponseData(response.data);
+
+                const code = response.data.code;
+                const message = response.data.message;
+
+                console.log(code)
+                console.log(message)
+            })
+        } catch(error){
+            console.error(error);
+        }
+    };
+
+	return (
+		<div className="flex">
+			<aside className="flex top-48 left-6 w-80 h-screen bg-white p-4 px-6">
+				<ul className="space-y-2">
+					{filterCategories.map((cat) => (
+						<li key={cat.id}>
+						<button
+							onClick={() => toggleFilter(cat.id)}
+							className="w-64 flex justify-between items-center text-left pl-3 py-2 rounded hover:bg-gray-100"
+						>
+							<div className="flex items-center gap-2">
+							<img src={cat.img} className="w-6 h-6" />
+							<span className="text-base font-medium text-gray-700 pl-2">{cat.name}</span>
+							</div>
+							{openFilter[cat.id] ? (
+							<ChevronDown className="h-4 w-4" />
+							) : (
+							<ChevronRight className="h-4 w-4" />
+							)}
+						</button>
+						<div
+							className={`transition-all duration-500 ease-in-out overflow-hidden ${
+							openFilter[cat.id] ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
+							}`}
+						>
+							<div className="text-sm font-semibold pl-3 pt-2">
+							<FilterOptionGroup
+								options={filterOptionsMap[cat.id]}
+								state={formData[cat.id]}
+								onChange={(key, value) => handleOptionChange(cat.id, key, value)}
+							/>
+							</div>
+						</div>
+						</li>
+					))}
+					<div className="p-4">
+						<button 
+							onClick={handleSubmit}
+							className="text-md px-3 py-2 rounded-md text-white bg-indigo-500 font-medium hover:bg-indigo-600"
+						>
+							Apply filters
+						</button>
 					</div>
-					{openFilter[cat.id] ? (
-					<ChevronDown className="h-4 w-4" />
-					) : (
-					<ChevronRight className="h-4 w-4" />
-					)}
-				</button>
-				<div
-					className={`transition-all duration-500 ease-in-out overflow-hidden ${
-					openFilter[cat.id] ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
-					}`}
-				>
-					<div className="text-sm font-semibold pl-3 pt-2">
-					<FilterOptionGroup
-						options={filterOptionsMap[cat.id]}
-						state={formData[cat.id]}
-						onChange={(key, value) => handleOptionChange(cat.id, key, value)}
-					/>
-					</div>
-				</div>
-				</li>
-			))}
-			</ul>
-		</aside>
-	</div>
-  );
+				</ul>
+			</aside>
+		</div>
+	);
 };
 
 export default FilterSideBarRestaurants;

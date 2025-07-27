@@ -32,3 +32,14 @@ def login():
 
 	result = services.verify_user_credentials(email, password)
 	return result
+
+@app.route('/restaurant', methods=['POST','GET'])
+def restaurant():
+	json_data = request.get_json()
+	if not json_data:
+		return {'message': 'Invalid or missing JSON data'}, 400
+
+	data = json_data
+	
+	result = services.rank_restaurants(data)
+	return result

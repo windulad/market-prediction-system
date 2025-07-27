@@ -1,0 +1,64 @@
+INSERT INTO RESTAURANTS 
+	(res_id, 
+	res_name, 
+	address, 
+	latitude, 
+	longitude, 
+	opening_time,
+	closing_time,
+	opening_day,
+	closing_day,
+	reservations,
+	cleanliness,
+	budget,
+	cuisine_vegan,
+	cuisine_halal,
+	cuisine_gluten_free,
+	cuisine_low_calorie,
+	beverage_cocktail,
+	beverage_non_alchoholic,
+	beverage_premium,
+	location_type,
+	location_noise_level,
+	location_decor,
+	location_music)
+VALUES
+	("RES0002",
+	"Upali’s by Nawaloka",
+	"Old Dutch Hospital Complex, 04 Hospital St, Colombo 00100", 
+	"6.9332° N",
+	"79.8436° E",
+	"12:00:00",
+	"21:30:00",
+	"MON",
+	"SUN",
+	"YES",
+	"HIGH",
+	"MID",
+	"NO",
+	"NO",
+	"NO",
+	"NO",
+	"YES",
+	"YES",
+	"YES",
+	"YES",
+	"LOW",
+	"YES",
+	"YES"
+)
+
+# reservations VARCHAR(10), --> yes/no
+# cleanliness VARCHAR(10), --> low/mid/high
+# budget VARCHAR(10), --> low/mid/high
+# cuisine_vegan VARCHAR(10), --> yes/no
+# cuisine_halal VARCHAR(10), --> yes/no
+# cuisine_gluten_free  VARCHAR(10), --> yes/no
+# cuisine_low_calorie VARCHAR(10), --> yes/no
+# beverage_cocktail VARCHAR(10), --> yes/no
+# beverage_non_alchoholic VARCHAR(10) --> yes/no
+# beverage_premium VARCHAR(10), --> yes/no
+# location_type VARCHAR(10), --> yes/no
+# location_noise_level VARCHAR(10) --> low/mid/high
+# location_decor VARCHAR(10) --> yes/no
+# location_music VARCHAR(10) --> yes/no
