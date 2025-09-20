@@ -49,7 +49,7 @@ market-prediction-system/
 ```
 ---
 
-⚡ Installation
+## ⚡ Installation
 
 Backend
 ```
@@ -66,16 +66,16 @@ npm install
 ```
 ---
 
-🚀 Usage
+## 🚀 Usage
 
-Start Backend
+### Start Backend
 ```
 cd backend
 source venv/bin/activate
 python app/main.py           # Flask
 ```
 
-Start Frontend
+### Start Frontend
 ```
 cd frontend/app
 npm start
