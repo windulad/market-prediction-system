@@ -1,19 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-/**
- * GreetingHeader
- *
- * Props:
- * - name: string (required) - the name to show in the greeting
- * - captions: { morning?: string, afternoon?: string, evening?: string } (optional)
- * - timezoneOffsetMinutes: number (optional) - override timezone as minutes offset from UTC (e.g. +330 for Asia/Colombo)
- *
- * Usage:
- * import GreetingHeader from "./GreetingHeader";
- * <GreetingHeader name="Windula" />
- */
-
 const defaultCaptions = {
     morning: "Here’s a quick glance at your business today — stay updated and plan ahead.",
     afternoon: "Track sales, manage ads, and grow your shop with ease throughout the day.",
