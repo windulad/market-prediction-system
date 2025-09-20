@@ -1,4 +1,4 @@
-# 🌟 Market Prediction System
+# 🌟 Moodify
 
 > **A data-driven sentiment analysis and business insight platform**  
 > Transforming unstructured reviews into actionable insights for Sri Lankan SMEs.  
