@@ -31,7 +31,7 @@
 ---
 
 ## 📁 Project Structure
-
+```
 market-prediction-system/
 │
 ├── backend/
@@ -47,7 +47,7 @@ market-prediction-system/
 │
 ├── .gitignore
 └── README.md
-
+```
 ---
 
 ⚡ Installation
