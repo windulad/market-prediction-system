@@ -22,10 +22,10 @@
 | Layer | Technology |
 |-------|------------|
 | Frontend | React, TailwindCSS, JavaScript |
-| Backend | Python, Flask/FastAPI |
-| ML | BERT (TensorFlow/Keras) |
-| Database | SQLite/PostgreSQL (if used) |
-| Deployment | Docker / Heroku / GCP |
+| Backend | Python, Flask |
+| ML | BERT (TensorFlow, Keras) |
+| Database | MySQL |
+| Deployment | Docker, AWS, Snowflake |
 
 ---
 
