@@ -1,7 +1,7 @@
 # 🌟 Moodify
 
 > **A data-driven sentiment analysis and business insight platform**  
-> Transforming unstructured reviews into actionable insights for Sri Lankan SMEs.  
+> Transforming unstructured reviews into actionable insights.  
 
 ![Python](https://img.shields.io/badge/python-3.11-blue) ![React](https://img.shields.io/badge/react-18-blue) ![TensorFlow](https://img.shields.io/badge/tensorflow-2.13-orange)  
 
@@ -51,7 +51,7 @@ market-prediction-system/
 
 ## ⚡ Installation
 
-Backend
+### Backend
 ```
 cd backend
 python -m venv venv
@@ -59,7 +59,7 @@ source venv/bin/activate  # Linux/macOS
 venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ```
-Frontend
+### Frontend
 ```
 cd frontend/app
 npm install
