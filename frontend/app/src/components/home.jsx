@@ -16,6 +16,24 @@ import GroomingTRS_2 from '../assets/home_components/top_rated/grooming_2.png'
 import RestaurantIcon from '../assets/home_components/categories/restaurant_icon.png'
 import FashionIcon from '../assets/home_components/categories/fashion_icon.png'
 import WellnessIcon from '../assets/home_components/categories/wellness_icon.png'
+import UserProfile_1 from '../assets/home_components/reviews/profile_pic/user_profile_1.jpg'
+import UserProfile_2 from '../assets/home_components/reviews/profile_pic/user_profile_2.jpg'
+import UserProfile_3 from '../assets/home_components/reviews/profile_pic/user_profile_3.jpg'
+import UserProfile_4 from '../assets/home_components/reviews/profile_pic/user_profile_4.jpg'
+import UserProfile_5 from '../assets/home_components/reviews/profile_pic/user_profile_5.jpg'
+import UserProfile_6 from '../assets/home_components/reviews/profile_pic/user_profile_6.jpg'
+import UserProfile_7 from '../assets/home_components/reviews/profile_pic/user_profile_7.jpg'
+import UserProfile_8 from '../assets/home_components/reviews/profile_pic/user_profile_8.jpg'
+import UserProfile_9 from '../assets/home_components/reviews/profile_pic/user_profile_9.jpg'
+import ReviewImg_1 from '../assets/home_components/reviews/review_pic/review_img_1.jpg'
+import ReviewImg_2 from '../assets/home_components/reviews/review_pic/review_img_2.jpg'
+import ReviewImg_3 from '../assets/home_components/reviews/review_pic/review_img_3.jpg'
+import ReviewImg_4 from '../assets/home_components/reviews/review_pic/review_img_4.jpg'
+import ReviewImg_5 from '../assets/home_components/reviews/review_pic/review_img_5.jpg'
+import ReviewImg_6 from '../assets/home_components/reviews/review_pic/review_img_6.jpg'
+import ReviewImg_7 from '../assets/home_components/reviews/review_pic/review_img_7.jpg'
+import ReviewImg_8 from '../assets/home_components/reviews/review_pic/review_img_8.jpg'
+import ReviewImg_9 from '../assets/home_components/reviews/review_pic/review_img_9.jpg'
 
 function Home(){
     // GET sessionValue
@@ -40,6 +58,10 @@ function Home(){
 
     const handleclickWellness = () => {
         navigate('/wellness');
+    }
+
+    const handleclickBusiness = () => {
+        navigate('/business');
     }
 
     const handleclickLogin = () => {
@@ -110,95 +132,98 @@ function Home(){
     const loopingShops = [...topRatedShops, ...topRatedShops];
     
     const reviews = [
+        //restaurants
         {
             id: 1,
             reviewer: "John Doe",
-            profilePic: "/images/profile-john.jpg",
+            profilePic: UserProfile_1,
             timestamp: "April 29, 2025 at 3:45 PM",
             shopName: "Cafe Bliss",
             rating: 4,
             text: "Amazing ambiance and the food was delicious. The service could be faster, but overall, great experience!, highly recommended!",
-            image: "/images/review-example.jpg",
+            image: ReviewImg_1,
         },
         {
             id: 2,
-            reviewer: "Jane Smith",
-            profilePic: "/images/profile-jane.jpg",
-            timestamp: "May 1, 2025 at 12:10 PM",
-            shopName: "Style Studio",
+            reviewer: "Emily Carter",
+            profilePic: UserProfile_2,
+            timestamp: "May 1, 2025 at 6:15 PM",
+            shopName: "Spice Garden",
             rating: 5,
-            text: "Loved the variety of outfits and how helpful the staff were. Highly recommend!",
-            image: "/images/review-fashion.jpg",
+            text: "Authentic Sri Lankan flavors with a modern twist. The staff were attentive and the portions generous. Perfect for family dinners!",
+            image: ReviewImg_2,
         },
         {
             id: 3,
-            reviewer: "Jane Paul",
-            profilePic: "/images/profile-john.jpg",
-            timestamp: "May 1, 2025 at 12:10 PM",
-            shopName: "Style Studio",
-            rating: 5,
-            text: "Loved the variety of outfits and how helpful the staff were. Highly recommend!",
-            image: "/images/review-fashion.jpg",
+            reviewer: "Michael Lee",
+            profilePic: UserProfile_3,
+            timestamp: "May 3, 2025 at 12:40 PM",
+            shopName: "Urban Deli",
+            rating: 3,
+            text: "Good sandwiches, but the seating area felt cramped. Prices are fair though, so decent for a quick lunch stop. Excellent Choice.",
+            image: ReviewImg_3,
         },
+        //fashion
         {
             id: 4,
-            reviewer: "John Doe",
-            profilePic: "/images/profile-john.jpg",
-            timestamp: "April 29, 2025 at 3:45 PM",
-            shopName: "Cafe Bliss",
-            rating: 4,
-            text: "Amazing ambiance and the food was delicious. The service could be faster, but overall, great experience!, highly recommended!",
-            image: "/images/review-example.jpg",
+            reviewer: "Daniel Kim",
+            profilePic: UserProfile_4,
+            timestamp: "May 7, 2025 at 2:30 PM",
+            shopName: "TrendHouse",
+            rating: 5,
+            text: "Stylish and modern clothing at reasonable prices. Staff helped me find the perfect outfit for an event. Highly recommended!",
+            image: ReviewImg_4,
         },
         {
             id: 5,
-            reviewer: "Jane Smith",
-            profilePic: "/images/profile-jane.jpg",
-            timestamp: "May 1, 2025 at 12:10 PM",
-            shopName: "Style Studio",
-            rating: 5,
-            text: "Loved the variety of outfits and how helpful the staff were. Highly recommend!",
-            image: "/images/review-fashion.jpg",
-        },
-        {
-            id: 6,
-            reviewer: "Jane Paul",
-            profilePic: "/images/profile-john.jpg",
-            timestamp: "May 1, 2025 at 12:10 PM",
-            shopName: "Style Studio",
-            rating: 5,
-            text: "Loved the variety of outfits and how helpful the staff were. Highly recommend!",
-            image: "/images/review-fashion.jpg",
-        },
-        {
-            id: 4,
-            reviewer: "John Doe",
-            profilePic: "/images/profile-john.jpg",
-            timestamp: "April 29, 2025 at 3:45 PM",
-            shopName: "Cafe Bliss",
+            reviewer: "Olivia Brown",
+            profilePic: UserProfile_5,
+            timestamp: "May 9, 2025 at 11:05 AM",
+            shopName: "Velvet Vogue",
             rating: 4,
-            text: "Amazing ambiance and the food was delicious. The service could be faster, but overall, great experience!, highly recommended!",
-            image: "/images/review-example.jpg",
-        },
-        {
-            id: 5,
-            reviewer: "Jane Smith",
-            profilePic: "/images/profile-jane.jpg",
-            timestamp: "May 1, 2025 at 12:10 PM",
-            shopName: "Style Studio",
-            rating: 5,
-            text: "Loved the variety of outfits and how helpful the staff were. Highly recommend!",
-            image: "/images/review-fashion.jpg",
+            text: "Great collection of dresses with unique designs. The fitting rooms were a bit crowded, but overall I loved shopping here.",
+            image: ReviewImg_5,
         },
         {
             id: 6,
-            reviewer: "Jane Paul",
-            profilePic: "/images/profile-john.jpg",
-            timestamp: "May 1, 2025 at 12:10 PM",
-            shopName: "Style Studio",
+            reviewer: "James Wilson",
+            profilePic: UserProfile_6,
+            timestamp: "May 10, 2025 at 5:45 PM",
+            shopName: "Urban Attire",
+            rating: 3,
+            text: "Trendy pieces but some items felt overpriced for the quality. Customer service was friendly though. Surely visit again!",
+            image: ReviewImg_6,
+        },
+        // Wellness
+        {
+            id: 7,
+            reviewer: "Hannah Green",
+            profilePic: UserProfile_7,
+            timestamp: "May 12, 2025 at 4:10 PM",
+            shopName: "Serenity Spa",
             rating: 5,
-            text: "Loved the variety of outfits and how helpful the staff were. Highly recommend!",
-            image: "/images/review-fashion.jpg",
+            text: "One of the most relaxing massages I've ever had. Clean, peaceful environment and professional therapists. Highly recommend!",
+            image: ReviewImg_7,
+        },
+        {
+            id: 8,
+            reviewer: "David Johnson",
+            profilePic: UserProfile_8,
+            timestamp: "May 14, 2025 at 9:25 AM",
+            shopName: "Lotus Yoga Studio",
+            rating: 4,
+            text: "Great yoga instructors and a calming atmosphere. Classes can get a little crowded in the evenings, but still a wonderful experience.",
+            image: ReviewImg_8,
+        },
+        {
+            id: 9,
+            reviewer: "Isabella Martinez",
+            profilePic: UserProfile_9,
+            timestamp: "May 15, 2025 at 1:50 PM",
+            shopName: "Pure Balance Wellness Center",
+            rating: 3,
+            text: "Good facilities and nice staff, but the waiting time for appointments was longer than expected. Hoping they improve scheduling.",
+            image: ReviewImg_9,
         },
       ];
       
@@ -243,7 +268,7 @@ function Home(){
                             <button onClick={handleclickRestaurants} className="text-lg text-white hover:text-indigo-600 font-semibold">Restaurants</button>
                             <button onClick={handleclickFashion} className="text-lg text-white hover:text-indigo-600 font-semibold">Fashion</button>
                             <button onClick={handleclickWellness} className="text-lg text-white hover:text-indigo-600 font-semibold">Wellness</button>
-                            <button href="#" className="text-lg text-white hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</button>
+                            <button onClick={handleclickBusiness} className="text-lg text-white hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</button>
                         </div>
                         <div className="flex space-x-8 items-center">
                             {sessionValue ? (

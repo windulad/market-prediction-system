@@ -7,6 +7,8 @@ import SignUp from './components/signup';
 import Restaurants from './components/restaurants';
 import Fashion from './components/fashion';
 import Wellness from './components/wellness';
+import Business from "./components/business";
+import Ads from "./components/business_tabs/ads";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/restaurants" element={<Restaurants/>}/>
         <Route path="/fashion" element={<Fashion/>}/>
         <Route path="/wellness" element={<Wellness/>}/>
+        <Route path="/business" element={<Business/>}/>
+        <Route path="/business/ads" element={<Ads/>}/>
     </Routes>
   );
 }

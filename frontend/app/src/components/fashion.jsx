@@ -31,6 +31,10 @@ function Fashion(){
         navigate('/wellness');
     }
 
+    const handleclickBusiness = () => {
+        navigate('/business');
+    }
+
     const handleclickLogin = () => {
         navigate('/login');
     }
@@ -114,7 +118,7 @@ function Fashion(){
                             <button onClick={handleclickRestaurants} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Restaurants</button>
                             <button onClick={handleclickFashion} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Fashion</button>
                             <button onClick={handleclickWellness} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Wellness</button>
-                            <button href="#" className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</button>
+                            <button onClick={handleclickBusiness} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</button>
                         </div>
                         <div className="flex space-x-8 items-center">
                             {sessionValue ? (

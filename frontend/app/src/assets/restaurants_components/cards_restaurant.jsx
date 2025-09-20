@@ -1,6 +1,13 @@
 import Card1Img from './restaurants_cards_images/card_1.jpg'
 import Card2Img from './restaurants_cards_images/card_2.jpg'
 import Card3Img from './restaurants_cards_images/card_3.jpg'
+import Card4Img from './restaurants_cards_images/card_4.jpg'
+import Card5Img from './restaurants_cards_images/card_5.jpg'
+import Card6Img from './restaurants_cards_images/card_6.jpg'
+import Card7Img from './restaurants_cards_images/card_7.jpg'
+import Card8Img from './restaurants_cards_images/card_8.jpg'
+import Card9Img from './restaurants_cards_images/card_9.jpg'
+import Card10Img from './restaurants_cards_images/card_10.jpg'
 
 const restaurants = [
     {
@@ -17,7 +24,7 @@ const restaurants = [
 	{
 		id: 2,
 		name: "Spice Hub",
-		location: "Kandy, Sri Lanka",
+		location: "Colombo, Sri Lanka",
 		rating: 4.2,
 		image: Card2Img,
 		description: "Modern bistro serving handcrafted burgers, gourmet pasta, and locally sourced desserts in a warm, industrial-chic atmosphere.",
@@ -28,7 +35,7 @@ const restaurants = [
 	{
 		id: 3,
 		name: "Ocean Breeze Café",
-		location: "Galle, Sri Lanka",
+		location: "Colombo, Sri Lanka",
 		rating: 4.8,
 		image: Card3Img,
 		description: "Family-friendly diner with a vibrant menu of Asian street food, sizzling grills, and refreshing mocktails, just minutes from the city center.",
@@ -38,80 +45,80 @@ const restaurants = [
 	},
 	{
 		id: 4,
-		name: "The Gourmet Grill",
+		name: "Bella Pasta",
 		location: "Colombo, Sri Lanka",
-		rating: 4.5,
-		image: Card1Img,
-		description: "A cozy urban hideout offering a fusion of Sri Lankan and Mediterranean flavors, perfect for brunch dates and late-night bites alike.",
-		cuisine: "Western",
+		rating: 4.6,
+		image: Card4Img,
+		description: "Experience authentic Italian cuisine in a warm and inviting atmosphere, where every dish is crafted with care. From handmade pastas to perfectly baked wood-fired pizzas.",
+		cuisine: "Italian",
 		price: "$$",
-  		isOpen: true
+		isOpen: true
 	},
 	{
 		id: 5,
-		name: "Spice Hub",
-		location: "Kandy, Sri Lanka",
+		name: "Zen Garden",
+		location: "Colombo, Sri Lanka",
 		rating: 4.2,
-		image: Card2Img,
-		description: "Modern bistro serving handcrafted burgers, gourmet pasta, and locally sourced desserts in a warm, industrial-chic atmosphere.",
-		cuisine: "Italian",
+		image: Card5Img,
+		description: "Step into a serene Japanese dining experience where every detail is thoughtfully crafted. Enjoy fresh sushi, flavorful ramen, and delicate matcha desserts in a calming, elegant atmosphere.",
+		cuisine: "Japanese",
 		price: "$$$",
-  		isOpen: true
+		isOpen: true
 	},
 	{
 		id: 6,
-		name: "Ocean Breeze Café",
-		location: "Galle, Sri Lanka",
-		rating: 4.8,
-		image: Card3Img,
-		description: "Family-friendly diner with a vibrant menu of Asian street food, sizzling grills, and refreshing mocktails, just minutes from the city center.",
-		cuisine: "Vegetarian",
+		name: "Tandoori Tales",
+		location: "Colombo, Sri Lanka",
+		rating: 4.4,
+		image: Card6Img,
+		description: "A vibrant North Indian restaurant bringing the rich flavors of India to your plate, sizzling tandoori specialties, and freshly baked naan that perfectly complements every dish.",
+		cuisine: "Indian",
 		price: "$$",
-  		isOpen: false
+		isOpen: true
 	},
 	{
 		id: 7,
-		name: "The Gourmet Grill",
+		name: "The Sweet Spot",
 		location: "Colombo, Sri Lanka",
-		rating: 4.5,
-		image: Card1Img,
-		description: "A cozy urban hideout offering a fusion of Sri Lankan and Mediterranean flavors, perfect for brunch dates and late-night bites alike.",
-		cuisine: "Western",
-		price: "$$",
-  		isOpen: true
+		rating: 4.8,
+		image: Card7Img,
+		description: "A delightful dessert destination offering handcrafted chocolates, rich cakes, and indulgent ice creams, perfect for satisfying every sweet craving.",
+		cuisine: "Desserts",
+		price: "$",
+		isOpen: true
 	},
 	{
 		id: 8,
-		name: "Spice Hub",
-		location: "Kandy, Sri Lanka",
-		rating: 4.2,
-		image: Card2Img,
-		description: "Modern bistro serving handcrafted burgers, gourmet pasta, and locally sourced desserts in a warm, industrial-chic atmosphere.",
-		cuisine: "Italian",
-		price: "$$$",
-  		isOpen: true
+		name: "Urban Tacos",
+		location: "Colombo, Sri Lanka",
+		rating: 4.1,
+		image: Card8Img,
+		description: "A lively casual eatery serving authentic Mexican street food, flavorful tacos, hearty burritos, and colorful, refreshing cocktails in a fun, relaxed atmosphere.",
+		cuisine: "Mexican",
+		price: "$",
+		isOpen: false
 	},
 	{
 		id: 9,
-		name: "Ocean Breeze Café",
-		location: "Galle, Sri Lanka",
-		rating: 4.8,
-		image: Card3Img,
-		description: "Family-friendly diner with a vibrant menu of Asian street food, sizzling grills, and refreshing mocktails, just minutes from the city center.",
-		cuisine: "Vegetarian",
-		price: "$$$",
-  		isOpen: false
+		name: "Green Leaf Café",
+		location: "Colombo, Sri Lanka",
+		rating: 4.5,
+		image: Card9Img,
+		description: "A vibrant, health-focused café offering fresh, plant-based salads, nutrient-packed smoothies, and wholesome bowls crafted for clean, delicious eating.",
+		cuisine: "Vegan",
+		price: "$$",
+		isOpen: true
 	},
 	{
 		id: 10,
-		name: "The Gourmet Grill",
+		name: "Mediterraneo",
 		location: "Colombo, Sri Lanka",
-		rating: 4.5,
-		image: Card1Img,
-		description: "A cozy urban hideout offering a fusion of Sri Lankan and Mediterranean flavors, perfect for brunch dates and late-night bites alike.",
-		cuisine: "Western",
-		price: "$$",
-  		isOpen: true
+		rating: 4.6,
+		image: Card10Img,
+		description: "A contemporary Mediterranean restaurant serving flavorful dishes with a modern twist, ideal for cozy family dinners or romantic date nights.",
+		cuisine: "Mediterranean",
+		price: "$$$",
+		isOpen: true
 	},
 ];
   

@@ -35,6 +35,10 @@ function Restaurants(){
         navigate('/wellness');
     }
 
+    const handleclickBusiness = () => {
+        navigate('/business');
+    }
+
     const handleclickLogin = () => {
         navigate('/login');
     }
@@ -82,7 +86,7 @@ function Restaurants(){
             {/* Navigation */}
             <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
                 <div className="max-w-screen-xl mx-auto py-2">
-                    <div className="flex h-16 justify-between items-center">
+                    <div className="flex justify-between bg-transparent h-16 items-center">
                         <div className="flex space-x-8 items-center">
                             <button onClick={handleclickHome} className="text-3xl text-indigo-500 font-bold">Moodify</button>
                             <div class="flex items-center w-full max-w-xl bg-white rounded-full shadow overflow-hidden">
@@ -118,7 +122,7 @@ function Restaurants(){
                             <button onClick={handleclickRestaurants} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Restaurants</button>
                             <button onClick={handleclickFashion} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Fashion</button>
                             <button onClick={handleclickWellness} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Wellness</button>
-                            <button href="#" className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</button>
+                            <button onClick={handleclickBusiness} className="text-lg text-gray-600 hover:text-indigo-600 font-semibold">Moodify&nbsp;for&nbsp;Buiness</button>
                         </div>
                         <div className="flex space-x-8 items-center">
                             {sessionValue ? (
